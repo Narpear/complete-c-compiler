@@ -70,9 +70,6 @@
 /* Line 189 of yacc.c  */
 #line 1 "parser.y"
 
-//NAME: Vijay J
-//SRN: PES2UG20CS815
-//SECTION: J
 	#include "abstract_syntax_tree.c"
 	#include <stdio.h>
 	#include <stdlib.h>
@@ -83,7 +80,7 @@
 
 
 /* Line 189 of yacc.c  */
-#line 87 "y.tab.c"
+#line 84 "y.tab.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -130,7 +127,7 @@ typedef union YYSTYPE
 {
 
 /* Line 214 of yacc.c  */
-#line 15 "parser.y"
+#line 12 "parser.y"
 
 	char* text;
 	expression_node* exp_node;
@@ -138,7 +135,7 @@ typedef union YYSTYPE
 
 
 /* Line 214 of yacc.c  */
-#line 142 "y.tab.c"
+#line 139 "y.tab.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -150,7 +147,7 @@ typedef union YYSTYPE
 
 
 /* Line 264 of yacc.c  */
-#line 154 "y.tab.c"
+#line 151 "y.tab.c"
 
 #ifdef short
 # undef short
@@ -442,9 +439,9 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    33,    33,    39,    40,    43,    46,    49,    52,    57,
-      58,    59,    60,    61,    62,    68,    74,    77,    80,    84,
-      87,    90,    93,    94,    97
+       0,    30,    30,    36,    37,    40,    43,    46,    49,    54,
+      55,    56,    57,    58,    59,    65,    71,    74,    77,    81,
+      84,    87,    90,    91,    94
 };
 #endif
 
@@ -1367,7 +1364,7 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 33 "parser.y"
+#line 30 "parser.y"
     {
 	display_exp_tree((yyvsp[(1) - (1)].exp_node));
 	printf("\nValid syntax\n");
@@ -1378,21 +1375,21 @@ yyreduce:
   case 3:
 
 /* Line 1455 of yacc.c  */
-#line 39 "parser.y"
+#line 36 "parser.y"
     { (yyval.exp_node) = init_exp_node("seq", (yyvsp[(1) - (2)].exp_node), (yyvsp[(2) - (2)].exp_node),  NULL);}
     break;
 
   case 4:
 
 /* Line 1455 of yacc.c  */
-#line 40 "parser.y"
+#line 37 "parser.y"
     {(yyval.exp_node) = (yyvsp[(1) - (1)].exp_node);}
     break;
 
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 43 "parser.y"
+#line 40 "parser.y"
     {
 		(yyval.exp_node) = init_exp_node(strdup("if"), (yyvsp[(3) - (7)].exp_node), (yyvsp[(6) - (7)].exp_node), NULL);
 	}
@@ -1401,7 +1398,7 @@ yyreduce:
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 46 "parser.y"
+#line 43 "parser.y"
     {
 		(yyval.exp_node) = init_exp_node(strdup("if-else"), (yyvsp[(3) - (11)].exp_node), (yyvsp[(6) - (11)].exp_node), (yyvsp[(10) - (11)].exp_node));
 	}
@@ -1410,14 +1407,14 @@ yyreduce:
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 49 "parser.y"
+#line 46 "parser.y"
     { (yyval.exp_node) = (yyvsp[(1) - (1)].exp_node);}
     break;
 
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 52 "parser.y"
+#line 49 "parser.y"
     {
 	(yyval.exp_node)=init_exp_node(strdup((yyvsp[(2) - (3)].text)), (yyvsp[(1) - (3)].exp_node), (yyvsp[(3) - (3)].exp_node), NULL);
 }
@@ -1426,49 +1423,49 @@ yyreduce:
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 57 "parser.y"
+#line 54 "parser.y"
     { (yyval.text) = "<";}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 58 "parser.y"
+#line 55 "parser.y"
     { (yyval.text) = ">";}
     break;
 
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 59 "parser.y"
+#line 56 "parser.y"
     { (yyval.text) = ">=";}
     break;
 
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 60 "parser.y"
+#line 57 "parser.y"
     { (yyval.text) = "<=";}
     break;
 
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 61 "parser.y"
+#line 58 "parser.y"
     { (yyval.text) = "==";}
     break;
 
   case 14:
 
 /* Line 1455 of yacc.c  */
-#line 62 "parser.y"
+#line 59 "parser.y"
     { (yyval.text) = "!=";}
     break;
 
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 68 "parser.y"
+#line 65 "parser.y"
     {
 						(yyval.exp_node) = init_exp_node(strdup("=") ,init_exp_node(strdup((yyvsp[(1) - (4)].text)) ,NULL ,NULL ,NULL) ,(yyvsp[(3) - (4)].exp_node) ,NULL);
 					}
@@ -1477,7 +1474,7 @@ yyreduce:
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 74 "parser.y"
+#line 71 "parser.y"
     {
 					(yyval.exp_node) = init_exp_node(strdup("+") ,(yyvsp[(1) - (3)].exp_node) ,(yyvsp[(3) - (3)].exp_node) ,NULL);
 				}
@@ -1486,7 +1483,7 @@ yyreduce:
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 77 "parser.y"
+#line 74 "parser.y"
     {
 					(yyval.exp_node) = init_exp_node(strdup("-") ,(yyvsp[(1) - (3)].exp_node) ,(yyvsp[(3) - (3)].exp_node) ,NULL);
 				}
@@ -1495,14 +1492,14 @@ yyreduce:
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 80 "parser.y"
+#line 77 "parser.y"
     { (yyval.exp_node) = (yyvsp[(1) - (1)].exp_node); }
     break;
 
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 84 "parser.y"
+#line 81 "parser.y"
     {
 					(yyval.exp_node) = init_exp_node(strdup("*") ,(yyvsp[(1) - (3)].exp_node) ,(yyvsp[(3) - (3)].exp_node) ,NULL);
 				}
@@ -1511,7 +1508,7 @@ yyreduce:
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 87 "parser.y"
+#line 84 "parser.y"
     {
 					(yyval.exp_node) = init_exp_node(strdup("/") ,(yyvsp[(1) - (3)].exp_node) ,(yyvsp[(3) - (3)].exp_node) ,NULL);	
 				}
@@ -1520,21 +1517,21 @@ yyreduce:
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 90 "parser.y"
+#line 87 "parser.y"
     { (yyval.exp_node) = (yyvsp[(1) - (1)].exp_node); }
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 93 "parser.y"
+#line 90 "parser.y"
     { (yyval.exp_node) = (yyvsp[(2) - (3)].exp_node); }
     break;
 
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 94 "parser.y"
+#line 91 "parser.y"
     {
 				(yyval.exp_node) = init_exp_node(strdup((yyvsp[(1) - (1)].text)) ,NULL ,NULL ,NULL);
 			}
@@ -1543,7 +1540,7 @@ yyreduce:
   case 24:
 
 /* Line 1455 of yacc.c  */
-#line 97 "parser.y"
+#line 94 "parser.y"
     {
 					(yyval.exp_node) = init_exp_node(strdup((yyvsp[(1) - (1)].text)) ,NULL ,NULL ,NULL);
 				}
@@ -1552,7 +1549,7 @@ yyreduce:
 
 
 /* Line 1455 of yacc.c  */
-#line 1556 "y.tab.c"
+#line 1553 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1764,7 +1761,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 102 "parser.y"
+#line 99 "parser.y"
 
 
 

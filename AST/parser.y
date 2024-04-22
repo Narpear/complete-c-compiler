@@ -1,7 +1,4 @@
 %{
-//NAME: Vijay J
-//SRN: PES2UG20CS815
-//SECTION: J
 	#include "abstract_syntax_tree.c"
 	#include <stdio.h>
 	#include <stdlib.h>
