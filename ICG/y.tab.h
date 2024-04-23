@@ -43,14 +43,16 @@
      T_NUM = 259,
      T_IF = 260,
      T_ELSE = 261,
-     GTEQ = 262,
-     LTEQ = 263,
-     EQQ = 264,
-     NEQ = 265,
-     GT = 266,
-     LT = 267,
-     OC = 268,
-     CC = 269
+     T_DO = 262,
+     T_WHILE = 263,
+     GTEQ = 264,
+     LTEQ = 265,
+     EQQ = 266,
+     NEQ = 267,
+     GT = 268,
+     LT = 269,
+     OC = 270,
+     CC = 271
    };
 #endif
 /* Tokens.  */
@@ -58,14 +60,16 @@
 #define T_NUM 259
 #define T_IF 260
 #define T_ELSE 261
-#define GTEQ 262
-#define LTEQ 263
-#define EQQ 264
-#define NEQ 265
-#define GT 266
-#define LT 267
-#define OC 268
-#define CC 269
+#define T_DO 262
+#define T_WHILE 263
+#define GTEQ 264
+#define LTEQ 265
+#define EQQ 266
+#define NEQ 267
+#define GT 268
+#define LT 269
+#define OC 270
+#define CC 271
 
 
 
