@@ -42,7 +42,9 @@
      T_ID = 258,
      T_NUM = 259,
      IF = 260,
-     ELSE = 261
+     ELSE = 261,
+     WHILE = 262,
+     DO = 263
    };
 #endif
 /* Tokens.  */
@@ -50,26 +52,14 @@
 #define T_NUM 259
 #define IF 260
 #define ELSE 261
+#define WHILE 262
+#define DO 263
 
 
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef union YYSTYPE
-{
 
-/* Line 1676 of yacc.c  */
-#line 12 "parser.y"
-
-	char* text;
-	expression_node* exp_node;
-
-
-
-/* Line 1676 of yacc.c  */
-#line 71 "y.tab.h"
-} YYSTYPE;
-# define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
 #endif
